@@ -3,18 +3,22 @@ import UIKit
 class FirstViewController: UIViewController, UITextFieldDelegate {
 
 	let pageTitle: String? = "Login"
-	let delayTime = 3
+	let delayTime = 3 // seconds
+	let timeInterval: Float = 0.25 // seconds
+	var progressTimer = Timer()
+	var counter: Float = 0
 	
 	@IBOutlet weak var labelMsg: UILabel!
 	@IBOutlet weak var labelGreeting: UILabel!
 	@IBOutlet weak var userNameInput: UITextField!
 	@IBOutlet weak var passwordInput: UITextField!
+	@IBOutlet weak var progressBar: UIProgressView!
 	
 	@IBOutlet weak var loginActivity: UIActivityIndicatorView!
 	
 	@IBAction func loginBtnClickec(_ sender: UIButton) {
 		loginActivity.startAnimating()
-		self.loginActivity.center = self.view.center
+		// self.loginActivity.center = self.view.center
 
 		// hide keyboard
 		userNameInput.resignFirstResponder()
@@ -29,13 +33,29 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 			self.labelGreeting.textColor = UIColor.green
 			self.labelGreeting.text = "Please wait \(delayTime) seconds so we can check your authentication"
 		
+			// update progress bar every second
+			progressTimer = Timer.scheduledTimer(timeInterval: Double(timeInterval), target: self, selector: #selector(self.updateProgressBar), userInfo: nil, repeats: true);
+			
+			
 			DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delayTime), execute: {
 				self.loginActivity.stopAnimating()
+				self.invalidateProgressBar()
 				
 				self.performSegue(withIdentifier: "loginSegueIdentifier", sender: self)
 			})
 		}
 		
+	}
+	
+	func updateProgressBar() {
+		counter += timeInterval
+		progressBar.progress = counter / Float(delayTime)
+	}
+	
+	func invalidateProgressBar() {
+		counter = 0
+		progressBar.progress = 0
+		progressTimer.invalidate()
 	}
 	
 	// hiding keyboard when anywhere on the screen is touched
@@ -56,6 +76,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 		
 		title = pageTitle
 		labelMsg.text = ""
+		progressBar.progress = 0
 		labelGreeting.text = "Please login first..."
 		
 		//let context = UIGraphicsGetCurrentContext()
