@@ -1,14 +1,23 @@
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource {
+// WARNING: GLOBAL VARIABLES !
+var selectedDeviceCellIndex = 0
 
-	let pageTitle: String? = "Device List"
+let deviceList = [
+	("Apple", "Apple related info", "v10.0.2"),
+	("Windows", "WinOS related info", "v10"),
+	("Android", "Android OS stuff", "v7.1")
+]
+
+
+class DeviceListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 	
-	let deviceList = [
-		("Apple", "Apple related info", "v10.0.2"),
-		("Windows", "WinOS related info", "v10"),
-		("Android", "Android OS stuff", "v7.1")
-	]
+	let pageTitle: String? = "Device List"
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		selectedDeviceCellIndex = indexPath.row
+		performSegue(withIdentifier: "deviceDescSegue", sender: self)
+	}
 	
 	// number of sections in table view
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -27,23 +36,17 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
 		cell.textLabel?.text = devName
 		return cell
 	}
-	
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		title = pageTitle
-    }
+	}
 	
 	// hide back button
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		//self.tabBarController?.navigationItem.hidesBackButton = true
 	}
-	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

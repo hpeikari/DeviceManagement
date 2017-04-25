@@ -9,18 +9,23 @@
 /* Begin PBXBuildFile section */
 		564817771E9D261500C01E5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564817751E9D261500C01E5B /* Main.storyboard */; };
 		5690F8E61EA911620098D382 /* MultiplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690F8E51EA911620098D382 /* MultiplePickerViewController.swift */; };
+		5690F8E81EA9700E0098D382 /* DeviceDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690F8E71EA9700E0098D382 /* DeviceDescViewController.swift */; };
+		5690F8EA1EA97B1E0098D382 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690F8E91EA97B1E0098D382 /* DeviceListViewController.swift */; };
+		5690F8EC1EAE52480098D382 /* EmployeeDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5690F8EB1EAE52480098D382 /* EmployeeDescViewController.swift */; };
 		56F3D3151E2443BD00443571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3D3141E2443BD00443571 /* AppDelegate.swift */; };
 		56F3D3171E2443BD00443571 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3D3161E2443BD00443571 /* FirstViewController.swift */; };
 		56F3D3191E2443BD00443571 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3D3181E2443BD00443571 /* AboutUsViewController.swift */; };
 		56F3D31E1E2443BD00443571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F3D31D1E2443BD00443571 /* Assets.xcassets */; };
 		56F3D3211E2443BD00443571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F3D31F1E2443BD00443571 /* LaunchScreen.storyboard */; };
-		56F3D3291E2447C900443571 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3D3281E2447C900443571 /* DeviceListViewController.swift */; };
 		56F3D32B1E248E5400443571 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3D32A1E248E5400443571 /* EmployeeListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		564817761E9D261500C01E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5690F8E51EA911620098D382 /* MultiplePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplePickerViewController.swift; sourceTree = "<group>"; };
+		5690F8E71EA9700E0098D382 /* DeviceDescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDescViewController.swift; sourceTree = "<group>"; };
+		5690F8E91EA97B1E0098D382 /* DeviceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceListViewController.swift; path = ../DeviceListViewController.swift; sourceTree = "<group>"; };
+		5690F8EB1EAE52480098D382 /* EmployeeDescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDescViewController.swift; sourceTree = "<group>"; };
 		56F3D3111E2443BD00443571 /* DeviceManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F3D3141E2443BD00443571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F3D3161E2443BD00443571 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +33,6 @@
 		56F3D31D1E2443BD00443571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56F3D3201E2443BD00443571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56F3D3221E2443BD00443571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56F3D3281E2447C900443571 /* DeviceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
 		56F3D32A1E248E5400443571 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +68,10 @@
 			children = (
 				56F3D3141E2443BD00443571 /* AppDelegate.swift */,
 				56F3D3161E2443BD00443571 /* FirstViewController.swift */,
-				56F3D3281E2447C900443571 /* DeviceListViewController.swift */,
+				5690F8E91EA97B1E0098D382 /* DeviceListViewController.swift */,
+				5690F8E71EA9700E0098D382 /* DeviceDescViewController.swift */,
 				56F3D32A1E248E5400443571 /* EmployeeListViewController.swift */,
+				5690F8EB1EAE52480098D382 /* EmployeeDescViewController.swift */,
 				5690F8E51EA911620098D382 /* MultiplePickerViewController.swift */,
 				56F3D3181E2443BD00443571 /* AboutUsViewController.swift */,
 				56F3D31D1E2443BD00443571 /* Assets.xcassets */,
@@ -155,10 +161,12 @@
 			files = (
 				5690F8E61EA911620098D382 /* MultiplePickerViewController.swift in Sources */,
 				56F3D32B1E248E5400443571 /* EmployeeListViewController.swift in Sources */,
+				5690F8EC1EAE52480098D382 /* EmployeeDescViewController.swift in Sources */,
 				56F3D3191E2443BD00443571 /* AboutUsViewController.swift in Sources */,
 				56F3D3151E2443BD00443571 /* AppDelegate.swift in Sources */,
-				56F3D3291E2447C900443571 /* DeviceListViewController.swift in Sources */,
 				56F3D3171E2443BD00443571 /* FirstViewController.swift in Sources */,
+				5690F8E81EA9700E0098D382 /* DeviceDescViewController.swift in Sources */,
+				5690F8EA1EA97B1E0098D382 /* DeviceListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

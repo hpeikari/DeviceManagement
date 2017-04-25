@@ -3,7 +3,7 @@ import UIKit
 class FirstViewController: UIViewController, UITextFieldDelegate {
 
 	let pageTitle: String? = "Login"
-	let delayTime = 3 // seconds
+	let delayTime = 2 // seconds
 	let timeInterval: Float = 0.25 // seconds
 	var progressTimer = Timer()
 	var counter: Float = 0

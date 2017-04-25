@@ -1,8 +1,9 @@
 import UIKit
 
-class EmployeeListViewController: UIViewController, UITableViewDataSource {
+class EmployeeListViewController: UITableViewController {
 
-	let pageTitle: String? = "Employee List"
+	// local variables
+	var selectedEmpCellIndex = 0
 	
 	let employeeInfo = [
 		("Hamed", "Peikari", "Swift v3"),
@@ -14,31 +15,29 @@ class EmployeeListViewController: UIViewController, UITableViewDataSource {
 		("Matthew", "Barrix", "C++")
 	]
 	
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
-	}
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+	// number of rows
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return employeeInfo.count
 	}
 	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	// content of each cell in table view
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
 		let (fName, lName, _) = employeeInfo[indexPath.row]
 		cell.textLabel?.text = "\(fName) \(lName)"
 		return cell
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		selectedEmpCellIndex = indexPath.row
+		performSegue(withIdentifier: "employeeDescSegue", sender: self)
+	}
+	
+	// reference data to be passed to next view controller using "prepare for segue"
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let employeeDescController = segue.destination as! EmployeeDescViewController
 		
-		title = pageTitle
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+		employeeDescController.selectedEmployeeInfo = employeeInfo[selectedEmpCellIndex]
+	}
 }
